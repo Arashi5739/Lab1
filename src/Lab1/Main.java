@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.*;
 //addddddddddddddddddd
+//this note has no use
 public class Main
 {
 	public static ArrayList<String> al;
