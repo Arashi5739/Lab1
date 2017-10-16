@@ -2,7 +2,7 @@ package Lab1;
 
 import java.awt.*;
 import javax.swing.*;
-
+//this is outputP
 public class outputP
 {
 	public  void sp()

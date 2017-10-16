@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-
+//this is outputN
 public class outputN
 {
    public void showN()
