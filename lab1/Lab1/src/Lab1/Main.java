@@ -3,7 +3,7 @@ package Lab1;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.*;
-//noteeeeeeeeeeeeeeee
+
 public class Main
 {
 	public static ArrayList<String> al;
