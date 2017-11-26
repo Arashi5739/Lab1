@@ -1,7 +1,5 @@
 package Lab1;
 
-import java.util.ArrayList;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,8 +15,7 @@ public class BridgeWordsTest {
     @Test
     public void testShortPath1() throws Exception {
         m.testmain();
-        SP sp1 = new SP();
-        String s = SP.calcShortestPath("big","time");
+        String s = DijkstraSP.calcShortestPath("big","time");
         String s2 = "big->data->time\t2.0";
         
         Assert.assertEquals("最短路径错误",s, s2);
@@ -27,8 +24,7 @@ public class BridgeWordsTest {
     @Test
     public void testShortPath2() throws Exception {
         m.testmain();
-        SP sp1 = new SP();
-        String s = SP.calcShortestPath("1","time");
+        String s = DijkstraSP.calcShortestPath("1","time");
         String s2 = "No “1” in the graph!";
         
         Assert.assertEquals("word1不存在",s, s2);
@@ -37,8 +33,7 @@ public class BridgeWordsTest {
     @Test
     public void testShortPath3() throws Exception {
         m.testmain();
-        SP sp1 = new SP();
-        String s = SP.calcShortestPath("data","bbb");
+        String s = DijkstraSP.calcShortestPath("data","bbb");
         String s2 = "No “bbb” in the graph!";
         
         Assert.assertEquals("word2不存在",s, s2);
@@ -47,8 +42,7 @@ public class BridgeWordsTest {
     @Test
     public void testShortPath4() throws Exception {
         m.testmain();
-        SP sp1 = new SP();
-        String s = SP.calcShortestPath("aaa","");
+        String s = DijkstraSP.calcShortestPath("aaa","");
         String s2 = "No “aaa” and “” in the graph!";
         
         Assert.assertEquals("word1，2不存在",s, s2);
@@ -115,5 +109,6 @@ public class BridgeWordsTest {
         Assert.assertEquals("存在多个桥接词",s, s2);
     }
     
+   
 }
 

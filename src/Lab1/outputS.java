@@ -57,7 +57,7 @@ class PathComponentFrame extends JFrame
          {
             public void actionPerformed(ActionEvent event)
             {
-            	textArea.append(SP.calcShortestPath(Field1.getText(), Field2.getText()));
+            	textArea.append(DijkstraSP.calcShortestPath(Field1.getText(), Field2.getText()));
             }
          });
 

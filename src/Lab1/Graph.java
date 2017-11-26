@@ -9,14 +9,15 @@ public class Graph
 {
 	EdgeWeightDiGraph g;
 
-	public  void showG() 
+	@SuppressWarnings("static-access")
+    public  void showG() 
 	{
-		g = Main.g;					
+		//g = Main.g;					
 		GraphViz gViz=new GraphViz("C:\\Users\\zipeng\\Desktop\\pic", "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe");
 	        gViz.start_graph();
-	        for (int i = 0; i < g.V(); i++) 
+	        for (int i = 0; i < EdgeWeightDiGraph.V(); i++) 
 	    	{  
-	    	    for (DirectedEdge e : g.adj(i)) 
+	            for (DirectedEdge e : EdgeWeightDiGraph.adj(i)) 
 	    	    {  
 	    	    	
 	    	    	gViz.addln(e.getSource()+"->"+e.getTarget()+";");

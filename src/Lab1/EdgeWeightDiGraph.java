@@ -5,10 +5,10 @@ import java.util.*;
 public class EdgeWeightDiGraph
 {
 	public static List<DirectedEdge>[] adj; // 邻接表矩阵  
-    private int V; // 点的数目  
-    private int E; // 边的数目
+    public static int V; // 点的数目  
+    public static int E; // 边的数目
 
-    public DirectedEdge ContainEdge(DirectedEdge e)   //存在边
+    public static DirectedEdge ContainEdge(DirectedEdge e)   //存在边
     {
     	String source = e.getSource();
     	String target = e.getTarget();
@@ -24,26 +24,6 @@ public class EdgeWeightDiGraph
 		return null;
     }
     
-    public void CreateGraph(ArrayList<String> al,ArrayList<String> aq)    //生成加权有向图
-    {   	
-    	for(int i=0;i<al.size()-1;i++)
-        	{
-        		DirectedEdge e = new DirectedEdge(al.get(i),al.get(i+1),1);
-        		if(ContainEdge(e)!=null)
-            	{
-            		double w = ContainEdge(e).weight();
-            		w += 1;      		     		
-            		ContainEdge(e).setWeight(w);
-            	}
-            	else
-            	{
-            		if(!al.get(i).equals(al.get(i+1)))
-            		{
-            			addEdge(e);
-            		}
-            	}
-        	}
-    }
     
     @SuppressWarnings("unchecked")
     public EdgeWeightDiGraph(int V) 
@@ -57,13 +37,13 @@ public class EdgeWeightDiGraph
         }  
     }  
 	      
-    public void addEdge(DirectedEdge e) {  
+    public static void addEdge(DirectedEdge e) {  
     	int i = Main.aq.indexOf(e.getSource());
         adj[i].add(e);  
         E++;  
     }  
       
-    public int V() {  
+    public static int V() {  
         return V;  
     }  
       
@@ -71,31 +51,21 @@ public class EdgeWeightDiGraph
         return E;  
     }  
       
-    public Iterable<DirectedEdge> adj(int v) {  
+    public static Iterable<DirectedEdge> adj(int v) {  
         return adj[v];  
     }  
-      
-    public Iterable<DirectedEdge> edges() {  
-        List<DirectedEdge> edges = new ArrayList<>();  
-        for (int i = 0; i < V; i++) {  
-            for (DirectedEdge e : adj[i]) {  
-                edges.add(e);  
-            }  
-        }  
-        return edges;  
-    }  
-      
+    
     public String showDirectedGraph() {  
         String s = V + " 个顶点, " + E + " 条边\n";  
         for (int i = 0; i < Main.aq.size(); i++) {  
             s += Main.aq.get(i) + ": ";  
-            for (DirectedEdge e : adj(i))
+            for (DirectedEdge e : EdgeWeightDiGraph.adj(i))
             {  
                 s += e.getTarget() + " [" + e.weight() + "], ";  
             }  
             s += "\n";  
         }  
         return s;  
-    } 
+    }
 
 }

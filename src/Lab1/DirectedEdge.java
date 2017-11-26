@@ -10,7 +10,7 @@ public class DirectedEdge {
         this.Source = Source;  
         this.Target = Target;  
         this.weight = weight;  
-    }  
+    }
       
     public String getSource() {  
         return Source;  
@@ -33,10 +33,4 @@ public class DirectedEdge {
         if (weight < e.weight()) return -1;  
         return 0;  
     }  
-      
-    public String toString() {  
-        String s = Source + " -> " + Target + ", weight: " + weight;  
-        return s;  
-    }  
-  
 }  

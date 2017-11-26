@@ -18,7 +18,8 @@ public class Main
 	     ButtonTest BT = new ButtonTest();
 	     BT.GUI();
 	 }
-    public void testmain()throws Exception 
+	 
+    public void testmain() throws Exception 
     {
         File f=new File("C:\\Users\\zipeng\\mygit\\Lab1\\src\\text.txt");
         FileInputStream fis=new FileInputStream(f);
@@ -40,7 +41,7 @@ public class Main
 
 		int s=aq.size(); 
 		g = new EdgeWeightDiGraph(s);
-		g.CreateGraph(al,aq);
+		Creategraph.CreateGraph(al,aq);
 
     }
     
